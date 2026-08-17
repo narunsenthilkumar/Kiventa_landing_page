@@ -1,0 +1,242 @@
+/* Taskora Premium Apple-Inspired Global Styles */
+
+:root {
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Helvetica Neue', sans-serif;
+  --font-mono: 'JetBrains Mono', SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  /* Default Dark Fallbacks */
+  --primaryBackground: #08080A;
+  --secondaryBackground: #121216;
+  --cardBackground: #16161B;
+  --glassSurface: rgba(22, 22, 28, 0.72);
+  --glassSurfaceHover: rgba(30, 30, 38, 0.85);
+  --glassBorder: rgba(255, 255, 255, 0.12);
+  --glassBorderHover: rgba(10, 132, 255, 0.45);
+  --glassShadow: 0 25px 50px -12px rgba(0, 0, 0, 0.75), 0 0 1px rgba(255, 255, 255, 0.15);
+  --textPrimary: #FFFFFF;
+  --textSecondary: #E0E0EA;
+  --textTertiary: #9898A6;
+  --textQuaternary: #5E5E6E;
+  --accent: #0A84FF;
+  --accentHover: #2997FF;
+  --accentGradientStart: #0A84FF;
+  --accentGradientEnd: #6865F5;
+  --accentSoft: rgba(10, 132, 255, 0.14);
+  --separator: rgba(255, 255, 255, 0.10);
+  --subtleBorder: rgba(255, 255, 255, 0.08);
+  --success: #30D158;
+  --warning: #FF9F0A;
+  --error: #FF453A;
+  --priorityUrgent: #FF453A;
+  --priorityHigh: #FF9F0A;
+  --priorityMedium: #5E5CE6;
+  --priorityLow: #30D158;
+  --priorityNone: #8E8E93;
+  --navBackground: rgba(10, 10, 12, 0.80);
+  --pillBackground: rgba(255, 255, 255, 0.06);
+  --glowColor: rgba(10, 132, 255, 0.28);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: var(--font-sans);
+  background-color: var(--primaryBackground);
+  color: var(--textPrimary);
+  scroll-behavior: smooth;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+body {
+  min-height: 100vh;
+  background-color: var(--primaryBackground);
+  color: var(--textPrimary);
+  line-height: 1.5;
+  overflow-x: hidden;
+  max-width: 100vw;
+  transition: background-color 0.4s cubic-bezier(0.16, 1, 0.3, 1), color 0.3s ease;
+}
+
+/* Custom Selection */
+::selection {
+  background: var(--accentSoft);
+  color: var(--accent);
+}
+
+/* Custom Minimal Apple Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--textQuaternary);
+  border-radius: 9999px;
+  border: 2px solid var(--primaryBackground);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--textTertiary);
+}
+
+/* Typography Hierarchy */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--textPrimary);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+}
+
+p {
+  color: var(--textSecondary);
+  font-weight: 400;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button, input, textarea, select {
+  font-family: inherit;
+  color: inherit;
+}
+
+/* Focus Visible Accessibility */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* Glassmorphism System */
+.glass-panel {
+  background: var(--glassSurface);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border: 1px solid var(--glassBorder);
+  box-shadow: var(--glassShadow);
+  border-radius: 24px;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card {
+  background: var(--glassSurface);
+  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
+  border: 1px solid var(--glassBorder);
+  box-shadow: var(--glassShadow);
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), 
+              box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1), 
+              border-color 0.35s ease,
+              background 0.35s ease;
+}
+
+.glass-card-interactive:hover {
+  transform: translateY(-4px);
+  border-color: var(--glassBorderHover);
+  background: var(--glassSurfaceHover);
+  box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.35), 0 0 1px rgba(255, 255, 255, 0.2);
+}
+
+.glass-pill {
+  background: var(--pillBackground);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--subtleBorder);
+  border-radius: 9999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+/* Apple Text Gradients */
+.text-gradient-hero {
+  background: linear-gradient(180deg, var(--textPrimary) 20%, var(--textSecondary) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-accent {
+  background: linear-gradient(135deg, var(--accentGradientStart) 0%, var(--accentGradientEnd) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Ambient Glow Orbs */
+.ambient-glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(90px);
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.6;
+}
+
+/* Section Wrappers */
+.section-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 100px 24px;
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 768px) {
+  .section-container {
+    padding: 60px 16px;
+  }
+}
+
+.section-header {
+  text-align: center;
+  max-width: 740px;
+  margin: 0 auto 60px auto;
+}
+
+.section-header .section-tag {
+  color: var(--accent);
+  font-size: 0.88rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-bottom: 12px;
+  display: inline-block;
+}
+
+.section-header h2 {
+  font-size: clamp(2rem, 4vw, 3.25rem);
+  margin-bottom: 16px;
+  line-height: 1.15;
+}
+
+.section-header p {
+  font-size: clamp(1.05rem, 1.5vw, 1.25rem);
+  line-height: 1.6;
+}
+
+/* Accessible reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

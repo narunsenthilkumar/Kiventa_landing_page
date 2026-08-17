@@ -1,6 +1,6 @@
 import React from 'react';
-import { Monitor, Smartphone, Globe } from 'lucide-react';
-import { APP_METADATA } from '../../config/downloadConfig';
+import { Monitor, Smartphone, Globe, ExternalLink } from 'lucide-react';
+import { APP_METADATA, downloadConfig } from '../../config/downloadConfig';
 
 export const Footer: React.FC = () => {
   const scrollTo = (id: string) => {
@@ -116,23 +116,46 @@ export const Footer: React.FC = () => {
           {/* Column 3: Downloads */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
             <h4 style={{ fontSize: '0.9rem', fontWeight: 700, color: 'var(--textPrimary)', letterSpacing: '0.04em', textTransform: 'uppercase' }}>
-              Platforms
+              Downloads
             </h4>
-            <a href="#downloads" onClick={(e) => { e.preventDefault(); scrollTo('downloads'); }} style={{ fontSize: '0.88rem', color: 'var(--textSecondary)', display: 'flex', alignItems: 'center', gap: '6px' }}>
-              <Monitor size={14} style={{ color: 'var(--accent)' }} /> Windows Setup (.exe)
+            <a
+              href={downloadConfig.windows.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              download={downloadConfig.windows.fileName}
+              style={{ fontSize: '0.88rem', color: 'var(--textSecondary)', display: 'flex', alignItems: 'center', gap: '6px' }}
+            >
+              <Monitor size={14} style={{ color: 'var(--accent)' }} /> Windows
             </a>
-            <a href="#downloads" onClick={(e) => { e.preventDefault(); scrollTo('downloads'); }} style={{ fontSize: '0.88rem', color: 'var(--textSecondary)', display: 'flex', alignItems: 'center', gap: '6px' }}>
+            <a
+              href={downloadConfig.android.apk.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              download={downloadConfig.android.apk.fileName}
+              style={{ fontSize: '0.88rem', color: 'var(--textSecondary)', display: 'flex', alignItems: 'center', gap: '6px' }}
+            >
               <Smartphone size={14} style={{ color: 'var(--success)' }} /> Android APK
             </a>
-            <a href="#downloads" onClick={(e) => { e.preventDefault(); scrollTo('downloads'); }} style={{ fontSize: '0.88rem', color: 'var(--textSecondary)', display: 'flex', alignItems: 'center', gap: '6px' }}>
-              <Smartphone size={14} style={{ color: '#FF9500' }} /> Android AAB Bundle
+            <a
+              href={downloadConfig.android.aab.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              download={downloadConfig.android.aab.fileName}
+              style={{ fontSize: '0.88rem', color: 'var(--textSecondary)', display: 'flex', alignItems: 'center', gap: '6px' }}
+            >
+              <Smartphone size={14} style={{ color: '#FF9500' }} /> Android AAB
             </a>
-            <a href="#downloads" onClick={(e) => { e.preventDefault(); scrollTo('downloads'); }} style={{ fontSize: '0.88rem', color: 'var(--textSecondary)', display: 'flex', alignItems: 'center', gap: '6px' }}>
-              <Globe size={14} style={{ color: '#5E5CE6' }} /> Web Browser PWA
+            <a
+              href={downloadConfig.web.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ fontSize: '0.88rem', color: 'var(--textSecondary)', display: 'flex', alignItems: 'center', gap: '6px' }}
+            >
+              <Globe size={14} style={{ color: '#5E5CE6' }} /> Web App
             </a>
           </div>
 
-          {/* Column 4: Resources */}
+          {/* Column 4: Resources & GitHub */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
             <h4 style={{ fontSize: '0.9rem', fontWeight: 700, color: 'var(--textPrimary)', letterSpacing: '0.04em', textTransform: 'uppercase' }}>
               Support
@@ -140,11 +163,16 @@ export const Footer: React.FC = () => {
             <a href="#installation" onClick={(e) => { e.preventDefault(); scrollTo('installation'); }} style={{ fontSize: '0.88rem', color: 'var(--textSecondary)' }}>
               Installation Guide
             </a>
-            <a href="#privacy" onClick={(e) => { e.preventDefault(); scrollTo('privacy'); }} style={{ fontSize: '0.88rem', color: 'var(--textSecondary)' }}>
-              Privacy Statement
+            <a
+              href={downloadConfig.github.releasesUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ fontSize: '0.88rem', color: 'var(--textSecondary)', display: 'flex', alignItems: 'center', gap: '4px' }}
+            >
+              <span>GitHub Releases</span> <ExternalLink size={12} />
             </a>
             <a href="#privacy" onClick={(e) => { e.preventDefault(); scrollTo('privacy'); }} style={{ fontSize: '0.88rem', color: 'var(--textSecondary)' }}>
-              Terms of Use
+              Privacy Statement
             </a>
             <a href="mailto:support@taskora.app" style={{ fontSize: '0.88rem', color: 'var(--textSecondary)' }}>
               Contact Team
@@ -170,7 +198,7 @@ export const Footer: React.FC = () => {
           <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
             <span>Apple HIG Spatial Design</span>
             <span>•</span>
-            <span>Version {APP_METADATA.latestVersion}</span>
+            <span>Version {downloadConfig.version}</span>
             <span>•</span>
             <span>August 2026</span>
           </div>

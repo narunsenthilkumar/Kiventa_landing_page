@@ -3,7 +3,7 @@ import { Download, Globe, Sparkles, ShieldCheck } from 'lucide-react';
 import { GlassSurface } from '../common/GlassSurface';
 import { AnimatedButton } from '../common/AnimatedButton';
 import { PillBadge } from '../common/PillBadge';
-import { DOWNLOAD_TARGETS } from '../../config/downloadConfig';
+import { downloadConfig } from '../../config/downloadConfig';
 
 export const FinalCta: React.FC = () => {
   const scrollTo = (id: string) => {
@@ -97,14 +97,34 @@ export const FinalCta: React.FC = () => {
               Download Taskora
             </AnimatedButton>
 
-            <AnimatedButton
-              variant="glass"
-              size="xl"
-              icon={<Globe size={20} />}
-              onClick={() => window.open(DOWNLOAD_TARGETS.web.url, '_blank')}
+            <a
+              href={downloadConfig.web.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="animated-btn"
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                gap: '10px',
+                padding: '18px 40px',
+                fontSize: '1.15rem',
+                borderRadius: '22px',
+                background: 'var(--glassSurface)',
+                color: 'var(--textPrimary)',
+                border: '1px solid var(--glassBorder)',
+                backdropFilter: 'blur(20px)',
+                WebkitBackdropFilter: 'blur(20px)',
+                boxShadow: '0 4px 12px rgba(0,0,0,0.06)',
+                fontWeight: 600,
+                textDecoration: 'none',
+                cursor: 'pointer',
+                transition: 'all 0.28s cubic-bezier(0.16, 1, 0.3, 1)',
+              }}
             >
-              Open Web App
-            </AnimatedButton>
+              <Globe size={20} />
+              <span>Open Web App</span>
+            </a>
           </div>
 
           <div

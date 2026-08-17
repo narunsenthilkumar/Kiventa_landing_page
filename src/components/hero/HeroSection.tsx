@@ -1,11 +1,14 @@
 import React from 'react';
-import { Download, Compass, Sparkles, Monitor, Smartphone, Globe, ShieldCheck } from 'lucide-react';
-import { AnimatedButton } from '../common/AnimatedButton';
+import { Download, Sparkles, Monitor, Smartphone, Globe, ShieldCheck, ArrowRight } from 'lucide-react';
 import { PillBadge } from '../common/PillBadge';
 import { ParallaxContainer } from './ParallaxContainer';
 import { HeroAppPreview } from './HeroAppPreview';
+import { downloadConfig } from '../../config/downloadConfig';
+import { usePlatform } from '../../hooks/usePlatform';
 
 export const HeroSection: React.FC = () => {
+  const platformInfo = usePlatform();
+
   const scrollTo = (id: string) => {
     const el = document.getElementById(id);
     if (el) el.scrollIntoView({ behavior: 'smooth' });
@@ -100,28 +103,100 @@ export const HeroSection: React.FC = () => {
             justifyContent: 'center',
             gap: '14px',
             flexWrap: 'wrap',
-            marginBottom: '36px',
+            marginBottom: '18px',
             animation: 'heroRise 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.24s backwards',
           }}
         >
-          <AnimatedButton
-            variant="download"
-            size="lg"
-            icon={<Download size={18} />}
-            isDownloadAction
-            onClick={() => scrollTo('downloads')}
+          {/* Primary CTA (Direct download or OS-specific action) */}
+          <a
+            href={platformInfo.primaryAction.url}
+            target={platformInfo.primaryAction.isExternalDownload ? '_blank' : '_blank'}
+            rel="noopener noreferrer"
+            download={platformInfo.isWindows ? downloadConfig.windows.fileName : platformInfo.isAndroid ? downloadConfig.android.apk.fileName : undefined}
+            className="animated-btn shimmer-trigger"
+            style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              gap: '10px',
+              fontWeight: 600,
+              cursor: 'pointer',
+              textDecoration: 'none',
+              padding: '15px 32px',
+              fontSize: '1.05rem',
+              borderRadius: '18px',
+              background: 'linear-gradient(135deg, #0A84FF 0%, #5E5CE6 100%)',
+              color: '#FFFFFF',
+              border: '1px solid rgba(255, 255, 255, 0.3)',
+              boxShadow: '0 12px 30px -8px rgba(10, 132, 255, 0.5)',
+              minHeight: '48px',
+              transition: 'all 0.28s cubic-bezier(0.16, 1, 0.3, 1)',
+            }}
           >
-            Download Taskora
-          </AnimatedButton>
+            <Download size={18} />
+            <span>{platformInfo.primaryAction.label}</span>
+          </a>
 
-          <AnimatedButton
-            variant="secondary"
-            size="lg"
-            icon={<Compass size={18} />}
-            onClick={() => scrollTo('features')}
+          {/* Secondary CTA */}
+          <a
+            href={platformInfo.secondaryAction.url}
+            target={platformInfo.secondaryAction.isExternalDownload ? '_blank' : '_blank'}
+            rel="noopener noreferrer"
+            download={platformInfo.isAndroid ? downloadConfig.windows.fileName : downloadConfig.android.apk.fileName}
+            className="animated-btn"
+            style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              gap: '10px',
+              fontWeight: 600,
+              cursor: 'pointer',
+              textDecoration: 'none',
+              padding: '15px 30px',
+              fontSize: '1.05rem',
+              borderRadius: '18px',
+              background: 'var(--pillBackground)',
+              color: 'var(--textPrimary)',
+              border: '1px solid var(--glassBorder)',
+              backdropFilter: 'blur(16px)',
+              WebkitBackdropFilter: 'blur(16px)',
+              minHeight: '48px',
+              transition: 'all 0.28s cubic-bezier(0.16, 1, 0.3, 1)',
+            }}
           >
-            Explore Features
-          </AnimatedButton>
+            <Smartphone size={18} style={{ color: 'var(--success)' }} />
+            <span>{platformInfo.secondaryAction.label}</span>
+          </a>
+        </div>
+
+        {/* Web App Tertiary Link */}
+        <div
+          style={{
+            marginBottom: '32px',
+            animation: 'heroRise 0.95s cubic-bezier(0.16, 1, 0.3, 1) 0.28s backwards',
+          }}
+        >
+          <a
+            href={downloadConfig.web.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '6px',
+              fontSize: '0.92rem',
+              color: 'var(--textSecondary)',
+              padding: '6px 14px',
+              borderRadius: '9999px',
+              background: 'transparent',
+              transition: 'color 0.2s ease',
+              fontWeight: 500,
+            }}
+            className="hero-web-link"
+          >
+            <span>Or use Taskora Web</span>
+            <ArrowRight size={14} style={{ color: '#5E5CE6' }} />
+          </a>
         </div>
 
         {/* Entrance Stage 5: Platform Availability Indicator */}
@@ -130,7 +205,7 @@ export const HeroSection: React.FC = () => {
             display: 'inline-flex',
             alignItems: 'center',
             gap: '16px',
-            padding: '8px 18px',
+            padding: '8px 20px',
             borderRadius: '9999px',
             background: 'var(--pillBackground)',
             border: '1px solid var(--subtleBorder)',
@@ -139,20 +214,54 @@ export const HeroSection: React.FC = () => {
             marginBottom: '56px',
             flexWrap: 'wrap',
             justifyContent: 'center',
-            animation: 'heroRise 1s cubic-bezier(0.16, 1, 0.3, 1) 0.3s backwards',
+            animation: 'heroRise 1s cubic-bezier(0.16, 1, 0.3, 1) 0.32s backwards',
           }}
         >
-          <span style={{ display: 'flex', alignItems: 'center', gap: '6px', color: 'var(--textSecondary)' }}>
+          <button
+            onClick={() => scrollTo('downloads')}
+            style={{
+              background: 'none',
+              border: 'none',
+              cursor: 'pointer',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '6px',
+              color: 'var(--textSecondary)',
+              fontSize: 'inherit',
+            }}
+          >
             <Monitor size={15} style={{ color: '#007AFF' }} /> Windows Desktop
-          </span>
+          </button>
           <span style={{ opacity: 0.3 }}>•</span>
-          <span style={{ display: 'flex', alignItems: 'center', gap: '6px', color: 'var(--textSecondary)' }}>
+          <button
+            onClick={() => scrollTo('downloads')}
+            style={{
+              background: 'none',
+              border: 'none',
+              cursor: 'pointer',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '6px',
+              color: 'var(--textSecondary)',
+              fontSize: 'inherit',
+            }}
+          >
             <Smartphone size={15} style={{ color: '#30D158' }} /> Android APK / AAB
-          </span>
+          </button>
           <span style={{ opacity: 0.3 }}>•</span>
-          <span style={{ display: 'flex', alignItems: 'center', gap: '6px', color: 'var(--textSecondary)' }}>
+          <a
+            href={downloadConfig.web.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '6px',
+              color: 'var(--textSecondary)',
+            }}
+          >
             <Globe size={15} style={{ color: '#5E5CE6' }} /> Web Browser
-          </span>
+          </a>
           <span style={{ opacity: 0.3 }}>•</span>
           <span style={{ display: 'flex', alignItems: 'center', gap: '5px', color: 'var(--textTertiary)' }}>
             <ShieldCheck size={14} style={{ color: 'var(--success)' }} /> Zero Cloud Tracking
@@ -172,6 +281,12 @@ export const HeroSection: React.FC = () => {
           </ParallaxContainer>
         </div>
       </div>
+
+      <style>{`
+        .hero-web-link:hover {
+          color: var(--textPrimary) !important;
+        }
+      `}</style>
     </section>
   );
 };

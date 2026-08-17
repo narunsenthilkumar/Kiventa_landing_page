@@ -1,157 +1,216 @@
 /**
  * Taskora Download & Release Configuration
- * Centralized repository for all platform distribution targets, release metadata,
- * checksums, and system requirements.
+ * Centralized repository for all platform distribution targets, GitHub release assets,
+ * and live application URLs.
+ *
+ * DO NOT hard-code GitHub URLs or release asset links in individual components.
+ * Modify this configuration to update repository paths, version numbers, or asset names.
  */
 
+// Centralized GitHub Repository Information
+export const GITHUB_OWNER = "narunsenthilkumar";
+export const GITHUB_REPO_NAME = "To_do_list_application";
+export const GITHUB_REPOSITORY = `${GITHUB_OWNER}/${GITHUB_REPO_NAME}`;
+
+// Release Version Metadata
+export const APP_VERSION = "1.0.0";
+export const RELEASE_TAG = `v${APP_VERSION}`;
+
+// Toggle to use latest dynamic release or pinned tag release
+// Default: 'latest' (https://github.com/OWNER/REPO/releases/latest/download)
+// Pinned: 'versioned' (https://github.com/OWNER/REPO/releases/download/v1.0.0)
+export const USE_VERSIONED_RELEASE = false;
+
+const GITHUB_RELEASE_BASE = USE_VERSIONED_RELEASE
+  ? `https://github.com/${GITHUB_REPOSITORY}/releases/download/${RELEASE_TAG}`
+  : `https://github.com/${GITHUB_REPOSITORY}/releases/latest/download`;
+
+// Live Web Application Onboarding URL
+export const WEB_APP_URL =
+  "https://6a82ff2378a7e7afb37dbaaf--taskoraapplication.netlify.app/onboarding";
+
+/**
+ * Production-Ready Download Configuration Schema
+ */
+export const downloadConfig = {
+  version: APP_VERSION,
+
+  github: {
+    repository: GITHUB_REPOSITORY,
+    releaseBase: GITHUB_RELEASE_BASE,
+    releaseTag: RELEASE_TAG,
+    releasesUrl: `https://github.com/${GITHUB_REPOSITORY}/releases`,
+  },
+
+  windows: {
+    name: "Taskora for Windows",
+    fileName: "Taskora-Setup.exe",
+    platform: "Windows",
+    architecture: "x64",
+    requirements: "Windows 10 / 11 (64-bit)",
+    version: APP_VERSION,
+    url: `${GITHUB_RELEASE_BASE}/Taskora-Setup.exe`,
+    tagline: "Full Taskora experience for Windows desktop.",
+    highlights: [
+      "Native Windows desktop application with Mica translucency",
+      "Global keyboard shortcuts (Quick Add task from anywhere)",
+      "Zero-latency SQLite local persistence engine",
+      "Offline-first with no account requirement",
+    ],
+  },
+
+  android: {
+    apk: {
+      name: "Taskora APK",
+      fileName: "Taskora.apk",
+      platform: "Android",
+      requirements: "Android 8.0 (Oreo) or higher",
+      version: APP_VERSION,
+      url: `${GITHUB_RELEASE_BASE}/Taskora.apk`,
+      tagline: "Take your tasks, projects, calendar and focus mode anywhere.",
+      highlights: [
+        "Instant direct APK sideload without Play Store login",
+        "Fluid 60fps gesture-driven swipe actions",
+        "True OLED dark mode tuned for battery conservation",
+        "Encrypted local backup export & restore",
+      ],
+    },
+
+    aab: {
+      name: "Taskora Android App Bundle",
+      fileName: "Taskora.aab",
+      platform: "Android",
+      requirements: "Google Play Store / Distribution",
+      version: APP_VERSION,
+      url: `${GITHUB_RELEASE_BASE}/Taskora.aab`,
+      tagline: "Google Play optimized dynamic distribution bundle.",
+      distributionNote:
+        "AAB is intended for Google Play distribution. It is not the normal direct-install Android package for mobile phones.",
+    },
+  },
+
+  web: {
+    name: "Taskora Web",
+    platform: "Web",
+    requirements: "Chrome, Safari, Edge, Firefox, Brave",
+    version: `${APP_VERSION} (Live)`,
+    url: WEB_APP_URL,
+    tagline: "Use Taskora directly from your browser.",
+    highlights: [
+      "Instant browser access with zero local installation",
+      "Progressive Web App (PWA) installable to Desktop / Mobile dock",
+      "100% offline-capable with local IndexedDB storage",
+      "End-to-end private device pairing with 6-digit PIN",
+    ],
+  },
+};
+
+/**
+ * App-wide metadata and brand resources
+ */
+export const APP_METADATA = {
+  name: "Taskora",
+  tagline: "Organize your day. Focus on what matters.",
+  supportingLine:
+    "Your tasks, projects, focus, and productivity — beautifully organized in one place.",
+  latestVersion: APP_VERSION,
+  releaseMonthYear: "August 2026",
+  copyright: "© 2026 Taskora. All rights reserved.",
+  links: {
+    github: `https://github.com/${GITHUB_REPOSITORY}`,
+    githubReleases: `https://github.com/${GITHUB_REPOSITORY}/releases`,
+    documentation: "#installation",
+    privacy: "#privacy",
+    terms: "#privacy",
+    support: "mailto:support@taskora.app",
+    webAppLive: WEB_APP_URL,
+  },
+  stats: {
+    platformsCount: "3 Platforms",
+    privacyRate: "100% Offline-First",
+    activeFocusSessions: "25 Min Flow",
+    syncSpeed: "< 50ms Local Sync",
+  },
+};
+
+/**
+ * Release Info Interface for backward compatibility with components
+ */
 export interface ReleaseInfo {
-  id: 'windows' | 'android-apk' | 'android-aab' | 'web';
+  id: "windows" | "android-apk" | "android-aab" | "web";
   platformName: string;
   badge: string;
   label: string;
   subLabel?: string;
   url: string;
-  fallbackUrl?: string;
   fileName?: string;
-  fileSize?: string;
   version: string;
-  releaseDate: string;
-  architecture: string;
+  architecture?: string;
   requirements: string;
   isPrimary?: boolean;
-  type: 'installer' | 'apk' | 'bundle' | 'webapp';
+  type: "installer" | "apk" | "bundle" | "webapp";
   description: string;
-  highlights: string[];
+  highlights?: string[];
 }
-
-export const APP_METADATA = {
-  name: 'Taskora',
-  tagline: 'Organize your day. Focus on what matters.',
-  supportingLine: 'Your tasks, projects, focus, and productivity — beautifully organized in one place.',
-  latestVersion: '1.0.0',
-  releaseMonthYear: 'August 2026',
-  copyright: '© 2026 Taskora. All rights reserved.',
-  links: {
-    github: 'https://github.com/taskora/taskora',
-    documentation: '#installation',
-    privacy: '#privacy',
-    terms: '#privacy',
-    support: 'mailto:support@taskora.app',
-    webAppLive: 'https://taskora.app/app',
-  },
-  stats: {
-    platformsCount: '3 Platforms',
-    privacyRate: '100% Offline-First',
-    activeFocusSessions: '25 Min Flow',
-    syncSpeed: '< 50ms Local Sync',
-  },
-};
 
 export const DOWNLOAD_TARGETS: Record<string, ReleaseInfo> = {
   windows: {
-    id: 'windows',
-    platformName: 'Windows',
-    badge: 'Desktop App',
-    label: 'Download for Windows',
-    subLabel: 'Installer (.exe) • 64-bit',
-    url: '/downloads/Taskora-Setup-1.0.0.exe',
-    fallbackUrl: 'https://github.com/taskora/taskora/releases/download/v1.0.0/Taskora-Setup-1.0.0.exe',
-    fileName: 'Taskora-Setup-1.0.0.exe',
-    fileSize: '188 MB',
-    version: '1.0.0',
-    releaseDate: 'August 2026',
-    architecture: 'x64 / AMD64',
-    requirements: 'Windows 10 / 11 (64-bit)',
+    id: "windows",
+    platformName: downloadConfig.windows.platform,
+    badge: "Desktop App",
+    label: "Download for Windows",
+    subLabel: `${downloadConfig.windows.fileName} • 64-bit`,
+    url: downloadConfig.windows.url,
+    fileName: downloadConfig.windows.fileName,
+    version: downloadConfig.version,
+    architecture: downloadConfig.windows.architecture,
+    requirements: downloadConfig.windows.requirements,
     isPrimary: true,
-    type: 'installer',
-    description: 'Your complete Taskora workspace for desktop with system tray, native hotkeys, and hardware voice engine.',
-    highlights: [
-      'Native Windows desktop application with Mica/Acrylic translucency',
-      'Global keyboard shortcuts (Quick Add task anywhere)',
-      'Offline-first zero latency SQLite/Async local persistence',
-      'On-device speech recognition via native Windows audio engine',
-    ],
+    type: "installer",
+    description: downloadConfig.windows.tagline,
+    highlights: downloadConfig.windows.highlights,
   },
   androidApk: {
-    id: 'android-apk',
-    platformName: 'Android',
-    badge: 'Direct APK',
-    label: 'Download APK',
-    subLabel: 'Direct Installation (.apk)',
-    url: '/downloads/Taskora.apk',
-    fallbackUrl: 'https://github.com/taskora/taskora/releases/download/v1.0.0/Taskora.apk',
-    fileName: 'Taskora.apk',
-    fileSize: '42 MB',
-    version: '1.0.0',
-    releaseDate: 'August 2026',
-    architecture: 'ARM64 / ARMv7 / x86_64',
-    requirements: 'Android 8.0 (Oreo) or higher',
+    id: "android-apk",
+    platformName: downloadConfig.android.apk.platform,
+    badge: "Direct APK",
+    label: "Download APK",
+    subLabel: downloadConfig.android.apk.fileName,
+    url: downloadConfig.android.apk.url,
+    fileName: downloadConfig.android.apk.fileName,
+    version: downloadConfig.version,
+    architecture: "ARM64 / ARMv7 / x86_64",
+    requirements: downloadConfig.android.apk.requirements,
     isPrimary: true,
-    type: 'apk',
-    description: 'Your productivity workspace wherever you go with fluid swipe gestures and tactile haptic feedback.',
-    highlights: [
-      'Instant direct APK sideload without Play Store account requirements',
-      'Fluid 60fps gesture-driven swipe actions and task completion animations',
-      'True OLED dark mode tuned for battery conservation',
-      'Encrypted local backup export & restore directly to device storage',
-    ],
+    type: "apk",
+    description: downloadConfig.android.apk.tagline,
+    highlights: downloadConfig.android.apk.highlights,
   },
   androidAab: {
-    id: 'android-aab',
-    platformName: 'Android',
-    badge: 'App Bundle',
-    label: 'Android App Bundle',
-    subLabel: 'Distribution (.aab)',
-    url: '/downloads/Taskora.aab',
-    fallbackUrl: 'https://github.com/taskora/taskora/releases/download/v1.0.0/Taskora.aab',
-    fileName: 'Taskora.aab',
-    fileSize: '38 MB',
-    version: '1.0.0',
-    releaseDate: 'August 2026',
-    architecture: 'Universal Google Play Format',
-    requirements: 'Android 8.0+ via Google Play / Internal App Sharing',
-    type: 'bundle',
-    description: 'AAB distribution artifact designed for Google Play Store deployment and internal testing streams.',
-    highlights: [
-      'Google Play optimized dynamic feature delivery',
-      'Automated device-tailored APK generation',
-      'For developers & distribution teams (not for direct device sideloading)',
-    ],
+    id: "android-aab",
+    platformName: downloadConfig.android.aab.platform,
+    badge: "Play Bundle",
+    label: "Download AAB",
+    subLabel: downloadConfig.android.aab.fileName,
+    url: downloadConfig.android.aab.url,
+    fileName: downloadConfig.android.aab.fileName,
+    version: downloadConfig.version,
+    architecture: "Universal Google Play Format",
+    requirements: downloadConfig.android.aab.requirements,
+    type: "bundle",
+    description: downloadConfig.android.aab.tagline,
   },
   web: {
-    id: 'web',
-    platformName: 'Web',
-    badge: 'Instant Access',
-    label: 'Open Taskora Web',
-    subLabel: 'Progressive Web App',
-    url: 'https://taskora.app/web',
-    fallbackUrl: '#hero',
-    version: '1.0.0 (Live)',
-    releaseDate: 'August 2026',
-    architecture: 'All Modern Browsers',
-    requirements: 'Chrome, Edge, Safari, Firefox, Brave',
-    type: 'webapp',
-    description: 'Use Taskora instantly from your browser with zero installation and full offline capability.',
-    highlights: [
-      'Instant load with service worker caching & local IndexedDB storage',
-      'Zero installation required — installable as a Desktop/Mobile PWA',
-      'Device pairing with QR code and 6-digit cryptographic PIN',
-    ],
+    id: "web",
+    platformName: downloadConfig.web.platform,
+    badge: "Instant Access",
+    label: "Open Taskora Web",
+    subLabel: "Browser Web App",
+    url: downloadConfig.web.url,
+    version: downloadConfig.web.version,
+    requirements: downloadConfig.web.requirements,
+    type: "webapp",
+    description: downloadConfig.web.tagline,
+    highlights: downloadConfig.web.highlights,
   },
 };
-
-export const CHANGELOG_V1 = [
-  {
-    version: '1.0.0',
-    date: 'August 2026',
-    title: 'Initial Production Release',
-    items: [
-      'Apple-inspired spatial glassmorphic interface with True Black OLED & Crisp Light themes',
-      'Smart Natural Language task creation with automatic date/time/tag extraction',
-      'Cinematic Focus Mode with 25:00 timer, ambient breathing halo, and soundscapes',
-      'Interactive Calendar with Month, Week, and Agenda timeline views',
-      'Cryptographic 6-digit offline device pairing with Lamport logical clocks',
-      'Zero-cloud architecture: 100% on-device private data storage',
-    ],
-  },
-];

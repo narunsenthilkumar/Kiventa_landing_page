@@ -402,7 +402,7 @@ export const InstallationGuide: React.FC = () => {
                   {
                     step: '1',
                     title: 'Open Taskora Web',
-                    detail: 'Navigate directly to the Taskora Web onboarding app in any modern browser.',
+                    detail: 'Navigate directly to the Taskora Web app in any modern browser.',
                   },
                   {
                     step: '2',

@@ -112,7 +112,7 @@ export const HeroSection: React.FC = () => {
             href={platformInfo.primaryAction.url}
             target={platformInfo.primaryAction.isExternalDownload ? '_blank' : '_blank'}
             rel="noopener noreferrer"
-            download={platformInfo.isWindows ? downloadConfig.windows.fileName : platformInfo.isAndroid ? downloadConfig.android.apk.fileName : undefined}
+            download={platformInfo.primaryAction.isExternalDownload ? (platformInfo.isWindows ? downloadConfig.windows.fileName : platformInfo.isAndroid ? downloadConfig.android.apk.fileName : undefined) : undefined}
             className="animated-btn shimmer-trigger"
             style={{
               display: 'inline-flex',
@@ -142,7 +142,7 @@ export const HeroSection: React.FC = () => {
             href={platformInfo.secondaryAction.url}
             target={platformInfo.secondaryAction.isExternalDownload ? '_blank' : '_blank'}
             rel="noopener noreferrer"
-            download={platformInfo.isAndroid ? downloadConfig.windows.fileName : downloadConfig.android.apk.fileName}
+            download={platformInfo.secondaryAction.isExternalDownload ? (platformInfo.isAndroid ? downloadConfig.windows.fileName : downloadConfig.android.apk.fileName) : undefined}
             className="animated-btn"
             style={{
               display: 'inline-flex',

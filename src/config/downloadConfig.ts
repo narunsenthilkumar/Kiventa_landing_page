@@ -25,9 +25,8 @@ const GITHUB_RELEASE_BASE = USE_VERSIONED_RELEASE
   ? `https://github.com/${GITHUB_REPOSITORY}/releases/download/${RELEASE_TAG}`
   : `https://github.com/${GITHUB_REPOSITORY}/releases/latest/download`;
 
-// Live Web Application Onboarding URL
-export const WEB_APP_URL =
-  "https://6a82ff2378a7e7afb37dbaaf--taskoraapplication.netlify.app/onboarding";
+// Live Web Application URL
+export const WEB_APP_URL = "https://todo-list-application-js.vercel.app/";
 
 /**
  * Production-Ready Download Configuration Schema

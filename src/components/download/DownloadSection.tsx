@@ -795,7 +795,7 @@ export const DownloadSection: React.FC = () => {
                 }}
               >
                 <span style={{ color: 'var(--textSecondary)' }}>Chrome • Safari • Edge • Firefox</span>
-                <span style={{ color: '#5E5CE6', fontWeight: 600 }}>Live Onboarding</span>
+                <span style={{ color: '#5E5CE6', fontWeight: 600 }}>Live Web App</span>
               </div>
 
               {/* Open Web App Button */}

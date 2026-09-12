@@ -157,7 +157,7 @@ export const InstallationGuide: React.FC = () => {
                 {[
                   {
                     step: '1',
-                    title: 'Download Taskora-Setup.exe',
+                    title: `Download ${downloadConfig.windows.fileName}`,
                     detail: 'Get the official executable from GitHub Releases.',
                   },
                   {
@@ -267,7 +267,7 @@ export const InstallationGuide: React.FC = () => {
                 {[
                   {
                     step: '1',
-                    title: 'Download Taskora.apk',
+                    title: `Download ${downloadConfig.android.apk.fileName}`,
                     detail: 'Tap the Download APK button on your device.',
                   },
                   {
@@ -349,7 +349,7 @@ export const InstallationGuide: React.FC = () => {
                   <strong style={{ color: 'var(--textPrimary)', display: 'block', marginBottom: '2px' }}>
                     About Android App Bundle (.aab)
                   </strong>
-                  Android App Bundle (.aab) is intended for Play Store publishing and distribution. It is not the normal direct-install package for Android phones. For mobile installation, use the <strong>Taskora.apk</strong> package above.
+                  Android App Bundle (.aab) is intended for Play Store publishing and distribution. It is not the normal direct-install package for Android phones. For mobile installation, use the <strong>{downloadConfig.android.apk.fileName}</strong> package above.
                 </div>
               </div>
             </div>

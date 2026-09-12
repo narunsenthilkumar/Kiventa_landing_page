@@ -56,7 +56,7 @@ KIVENTA is designed around a simple principle: productivity tools should elimina
 - 📊 **Productivity Telemetry**: Animated completion velocity curves, streak tracking (12 days 🔥), and milestone badges.
 - 🔄 **Cross-Device Sync Architecture**: Interactive 3-device network (Windows, Android, Web) showcasing 6-digit PIN pairing, Lamport logical clocks, and tombstone deletion protection.
 - 💾 **Data Sovereignty**: Working JSON atomic backup and CSV spreadsheet export triggers.
-- 📥 **Centralized Download Hub**: Prominent distribution cards for Windows (`Taskora-Setup.exe`), Android (`Taskora.apk` and `Taskora.aab`), and Web App with configurable release endpoints in `downloadConfig.ts`.
+- 📥 **Centralized Download Hub**: Prominent distribution cards for Windows (`Kiventa-Setup.exe`), Android (`Kiventa.apk` and `Kiventa.aab`), and Web App with configurable release endpoints in `downloadConfig.ts`.
 - 📱 **100% Responsive & Accessible**: Flawless layout across 320px mobile to 1920px desktop with `prefers-reduced-motion` compliance.
 
 ---
@@ -185,18 +185,16 @@ To update release URLs, binary filenames, or version numbers, edit `src/config/d
 export const DOWNLOAD_TARGETS = {
   windows: {
     label: "Download for Windows",
-    url: "/downloads/Taskora-Setup-1.0.0.exe",
-    fileName: "Taskora-Setup-1.0.0.exe",
+    url: `${GITHUB_RELEASE_BASE}/Kiventa-Setup.exe`,
+    fileName: "Kiventa-Setup.exe",
     version: "1.0.0",
-    fileSize: "188 MB",
-    architecture: "x64 / AMD64",
+    architecture: "x64",
     ...
   },
   androidApk: {
     label: "Download APK",
-    url: "/downloads/Taskora.apk",
-    fileName: "Taskora.apk",
-    fileSize: "42 MB",
+    url: `${GITHUB_RELEASE_BASE}/Kiventa.apk`,
+    fileName: "Kiventa.apk",
     ...
   },
   ...

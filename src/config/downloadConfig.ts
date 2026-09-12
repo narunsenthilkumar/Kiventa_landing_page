@@ -43,12 +43,12 @@ export const downloadConfig = {
 
   windows: {
     name: "KIVENTA for Windows",
-    fileName: "Taskora-Setup.exe",
+    fileName: "Kiventa-Setup.exe",
     platform: "Windows",
     architecture: "x64",
     requirements: "Windows 10 / 11 (64-bit)",
     version: APP_VERSION,
-    url: `${GITHUB_RELEASE_BASE}/Taskora-Setup.exe`,
+    url: `${GITHUB_RELEASE_BASE}/Kiventa-Setup.exe`,
     tagline: "Full KIVENTA experience for Windows desktop.",
     highlights: [
       "Native Windows desktop application with Mica translucency",
@@ -61,11 +61,11 @@ export const downloadConfig = {
   android: {
     apk: {
       name: "KIVENTA APK",
-      fileName: "Taskora.apk",
+      fileName: "Kiventa.apk",
       platform: "Android",
       requirements: "Android 8.0 (Oreo) or higher",
       version: APP_VERSION,
-      url: `${GITHUB_RELEASE_BASE}/Taskora.apk`,
+      url: `${GITHUB_RELEASE_BASE}/Kiventa.apk`,
       tagline: "Take your tasks, projects, calendar and focus mode anywhere.",
       highlights: [
         "Instant direct APK sideload without Play Store login",
@@ -77,11 +77,11 @@ export const downloadConfig = {
 
     aab: {
       name: "KIVENTA Android App Bundle",
-      fileName: "Taskora.aab",
+      fileName: "Kiventa.aab",
       platform: "Android",
       requirements: "Google Play Store / Distribution",
       version: APP_VERSION,
-      url: `${GITHUB_RELEASE_BASE}/Taskora.aab`,
+      url: `${GITHUB_RELEASE_BASE}/Kiventa.aab`,
       tagline: "Google Play optimized dynamic distribution bundle.",
       distributionNote:
         "AAB is intended for Google Play distribution. It is not the normal direct-install Android package for mobile phones.",

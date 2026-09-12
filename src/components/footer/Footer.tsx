@@ -180,7 +180,7 @@ export const Footer: React.FC = () => {
             <a href="#privacy" onClick={(e) => { e.preventDefault(); scrollTo('privacy'); }} style={{ fontSize: '0.88rem', color: 'var(--textSecondary)' }}>
               Privacy Statement
             </a>
-            <a href="mailto:support@taskora.app" style={{ fontSize: '0.88rem', color: 'var(--textSecondary)' }}>
+            <a href="mailto:support@kiventa.app" style={{ fontSize: '0.88rem', color: 'var(--textSecondary)' }}>
               Contact Team
             </a>
           </div>

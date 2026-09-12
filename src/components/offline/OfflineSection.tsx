@@ -20,7 +20,7 @@ export const OfflineSection: React.FC = () => {
           <span className="section-tag">Zero Latency Guarantee</span>
           <h2 className="text-gradient-hero">Works even when you're offline.</h2>
           <p>
-            No spinning loaders or network timeouts. Taskora gives you desktop-grade instant response times because all your data lives locally on your physical machine.
+            No spinning loaders or network timeouts. KIVENTA gives you desktop-grade instant response times because all your data lives locally on your physical machine.
           </p>
         </div>
 

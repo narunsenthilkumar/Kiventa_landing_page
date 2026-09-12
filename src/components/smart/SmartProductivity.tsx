@@ -76,9 +76,9 @@ export const SmartProductivity: React.FC = () => {
         {/* Section Header */}
         <div className="section-header reveal-hidden">
           <span className="section-tag">On-Device Intelligence</span>
-          <h2 className="text-gradient-hero">Taskora thinks with you.</h2>
+          <h2 className="text-gradient-hero">KIVENTA thinks with you.</h2>
           <p>
-            Capture ideas at the speed of thought. Taskora’s local parsing engine understands your intent without sending a single byte to external servers.
+            Capture ideas at the speed of thought. KIVENTA’s local parsing engine understands your intent without sending a single byte to external servers.
           </p>
         </div>
 
@@ -115,7 +115,7 @@ export const SmartProductivity: React.FC = () => {
             </div>
 
             <p style={{ fontSize: '0.9rem', color: 'var(--textSecondary)', marginBottom: '18px' }}>
-              Type naturally. Taskora automatically isolates the task name, date, time, tags, and priorities in real time.
+              Type naturally. KIVENTA automatically isolates the task name, date, time, tags, and priorities in real time.
             </p>
 
             {/* Sample Chips */}
@@ -343,7 +343,7 @@ export const SmartProductivity: React.FC = () => {
               <h4 style={{ fontSize: '1.1rem', fontWeight: 600 }}>Smart Scheduling</h4>
             </div>
             <p style={{ fontSize: '0.88rem', color: 'var(--textSecondary)', lineHeight: 1.5 }}>
-              Taskora analyzes upcoming deadlines and balances workload to prevent burnout without complex manual calendar rearrangement.
+              KIVENTA analyzes upcoming deadlines and balances workload to prevent burnout without complex manual calendar rearrangement.
             </p>
           </GlassSurface>
 

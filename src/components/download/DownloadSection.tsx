@@ -76,7 +76,7 @@ export const DownloadSection: React.FC = () => {
         <div className="section-header reveal-hidden" style={{ textAlign: 'center' }}>
           <span className="section-tag">Cross-Platform Apps</span>
           <h2 className="text-gradient-hero" style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.4rem)' }}>
-            Taskora on every device
+            KIVENTA on every device
           </h2>
           <p
             style={{
@@ -826,7 +826,7 @@ export const DownloadSection: React.FC = () => {
                 }}
               >
                 <ExternalLink size={18} />
-                <span>Open Taskora Web</span>
+                <span>Open KIVENTA Web</span>
               </a>
 
               {/* Copy URL action */}

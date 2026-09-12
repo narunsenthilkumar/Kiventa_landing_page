@@ -1,5 +1,5 @@
 /**
- * Taskora Download & Release Configuration
+ * KIVENTA Download & Release Configuration
  * Centralized repository for all platform distribution targets, GitHub release assets,
  * and live application URLs.
  *
@@ -42,14 +42,14 @@ export const downloadConfig = {
   },
 
   windows: {
-    name: "Taskora for Windows",
+    name: "KIVENTA for Windows",
     fileName: "Taskora-Setup.exe",
     platform: "Windows",
     architecture: "x64",
     requirements: "Windows 10 / 11 (64-bit)",
     version: APP_VERSION,
     url: `${GITHUB_RELEASE_BASE}/Taskora-Setup.exe`,
-    tagline: "Full Taskora experience for Windows desktop.",
+    tagline: "Full KIVENTA experience for Windows desktop.",
     highlights: [
       "Native Windows desktop application with Mica translucency",
       "Global keyboard shortcuts (Quick Add task from anywhere)",
@@ -60,7 +60,7 @@ export const downloadConfig = {
 
   android: {
     apk: {
-      name: "Taskora APK",
+      name: "KIVENTA APK",
       fileName: "Taskora.apk",
       platform: "Android",
       requirements: "Android 8.0 (Oreo) or higher",
@@ -76,7 +76,7 @@ export const downloadConfig = {
     },
 
     aab: {
-      name: "Taskora Android App Bundle",
+      name: "KIVENTA Android App Bundle",
       fileName: "Taskora.aab",
       platform: "Android",
       requirements: "Google Play Store / Distribution",
@@ -89,12 +89,12 @@ export const downloadConfig = {
   },
 
   web: {
-    name: "Taskora Web",
+    name: "KIVENTA Web",
     platform: "Web",
     requirements: "Chrome, Safari, Edge, Firefox, Brave",
     version: `${APP_VERSION} (Live)`,
     url: WEB_APP_URL,
-    tagline: "Use Taskora directly from your browser.",
+    tagline: "Use KIVENTA directly from your browser.",
     highlights: [
       "Instant browser access with zero local installation",
       "Progressive Web App (PWA) installable to Desktop / Mobile dock",
@@ -108,20 +108,22 @@ export const downloadConfig = {
  * App-wide metadata and brand resources
  */
 export const APP_METADATA = {
-  name: "Taskora",
-  tagline: "Organize your day. Focus on what matters.",
+  name: "KIVENTA",
+  tagline: "Turn Intent Into Action.",
   supportingLine:
-    "Your tasks, projects, focus, and productivity — beautifully organized in one place.",
+    "KIVENTA is a modern productivity workspace built to help you turn intentions into organized actions, stay focused, and keep your work synchronized across devices.",
+  brandMeaning:
+    "KIVENTA is a coined brand name representing the journey from intent to organized action and accomplishment.",
   latestVersion: APP_VERSION,
   releaseMonthYear: "August 2026",
-  copyright: "© 2026 Taskora. All rights reserved.",
+  copyright: "© 2026 KIVENTA. All rights reserved.",
   links: {
     github: `https://github.com/${GITHUB_REPOSITORY}`,
     githubReleases: `https://github.com/${GITHUB_REPOSITORY}/releases`,
     documentation: "#installation",
     privacy: "#privacy",
     terms: "#privacy",
-    support: "mailto:support@taskora.app",
+    support: "mailto:support@kiventa.app",
     webAppLive: WEB_APP_URL,
   },
   stats: {
@@ -203,7 +205,7 @@ export const DOWNLOAD_TARGETS: Record<string, ReleaseInfo> = {
     id: "web",
     platformName: downloadConfig.web.platform,
     badge: "Instant Access",
-    label: "Open Taskora Web",
+    label: "Open KIVENTA Web",
     subLabel: "Browser Web App",
     url: downloadConfig.web.url,
     version: downloadConfig.web.version,

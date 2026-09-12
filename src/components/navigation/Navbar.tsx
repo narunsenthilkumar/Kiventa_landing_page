@@ -29,6 +29,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
     { id: 'focus', label: 'Focus' },
     { id: 'calendar', label: 'Calendar' },
     { id: 'sync', label: 'Sync' },
+    { id: 'reviews', label: 'Reviews' },
     { id: 'downloads', label: 'Downloads' },
   ];
 
@@ -92,8 +93,8 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
             }}
           >
             <img
-              src="/assets/branding/taskora-favicon.png"
-              alt="Taskora Logo"
+              src="/assets/branding/kiventa_logo.png"
+              alt="KIVENTA logo"
               style={{
                 width: '28px',
                 height: '28px',
@@ -109,7 +110,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
                 color: 'var(--textPrimary)',
               }}
             >
-              Taskora
+              KIVENTA
             </span>
           </a>
 

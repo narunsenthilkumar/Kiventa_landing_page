@@ -18,7 +18,7 @@ export const CalendarSection: React.FC = () => {
   const [viewMode, setViewMode] = useState<'month' | 'week' | 'agenda'>('month');
 
   const events: CalendarEvent[] = [
-    { id: '1', title: 'Taskora v1.0.0 Architecture Review', day: 17, time: '10:00 AM - 11:30 AM', category: 'Engineering', color: '#0A84FF', priority: 'Urgent' },
+    { id: '1', title: 'KIVENTA v1.0.0 Architecture Review', day: 17, time: '10:00 AM - 11:30 AM', category: 'Engineering', color: '#0A84FF', priority: 'Urgent' },
     { id: '2', title: 'Focus Sprint: Apple Glass Polish', day: 17, time: '2:00 PM - 3:30 PM', category: 'Design System', color: '#5E5CE6', priority: 'High' },
     { id: '3', title: 'Verify Lamport Logical Clock Sync', day: 18, time: '11:00 AM - 12:00 PM', category: 'Security', color: '#30D158', priority: 'Medium' },
     { id: '4', title: 'Cross-platform Haptic Calibration', day: 19, time: '4:00 PM - 5:00 PM', category: 'Mobile Core', color: '#FF9F0A', priority: 'Medium' },

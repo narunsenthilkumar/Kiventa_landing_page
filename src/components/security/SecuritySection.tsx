@@ -24,7 +24,7 @@ export const SecuritySection: React.FC = () => {
     },
     {
       title: 'No Trackers or Behavioral Ads',
-      desc: 'Taskora contains zero analytics beacons, advertising SDKs, or data brokers. Your productivity telemetry stays strictly confidential.',
+      desc: 'KIVENTA contains zero analytics beacons, advertising SDKs, or data brokers. Your productivity telemetry stays strictly confidential.',
       icon: <EyeOff size={20} />,
       color: '#FF9500',
     },
@@ -50,7 +50,7 @@ export const SecuritySection: React.FC = () => {
           <span className="section-tag">Security & Sovereignty</span>
           <h2 className="text-gradient-hero">Your productivity belongs to you.</h2>
           <p>
-            We believe your daily thoughts, schedules, and projects are private. Taskora is architected from the ground up with zero cloud dependencies.
+            We believe your daily thoughts, schedules, and projects are private. KIVENTA is architected from the ground up with zero cloud dependencies.
           </p>
         </div>
 

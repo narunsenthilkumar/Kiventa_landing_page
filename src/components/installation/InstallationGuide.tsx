@@ -119,7 +119,7 @@ export const InstallationGuide: React.FC = () => {
                     Windows Installation Steps
                   </h3>
                   <p style={{ fontSize: '0.88rem', color: 'var(--textSecondary)' }}>
-                    Follow these 4 simple steps to install Taskora on Windows 10 or 11.
+                    Follow these 4 simple steps to install KIVENTA on Windows 10 or 11.
                   </p>
                 </div>
                 <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
@@ -172,8 +172,8 @@ export const InstallationGuide: React.FC = () => {
                   },
                   {
                     step: '4',
-                    title: 'Launch Taskora',
-                    detail: 'Open Taskora from your Start menu or desktop shortcut.',
+                    title: 'Launch KIVENTA',
+                    detail: 'Open KIVENTA from your Start menu or desktop shortcut.',
                   },
                 ].map((item) => (
                   <div
@@ -282,13 +282,13 @@ export const InstallationGuide: React.FC = () => {
                   },
                   {
                     step: '4',
-                    title: 'Install Taskora',
+                    title: 'Install KIVENTA',
                     detail: 'Tap "Install" on the system package installer dialog.',
                   },
                   {
                     step: '5',
                     title: 'Open the application',
-                    detail: 'Launch Taskora and begin organizing right away.',
+                    detail: 'Launch KIVENTA and begin organizing right away.',
                   },
                 ].map((item) => (
                   <div
@@ -364,7 +364,7 @@ export const InstallationGuide: React.FC = () => {
                     Web App & PWA Instructions
                   </h3>
                   <p style={{ fontSize: '0.88rem', color: 'var(--textSecondary)' }}>
-                    Access Taskora directly from any modern web browser with zero setup.
+                    Access KIVENTA directly from any modern web browser with zero setup.
                   </p>
                 </div>
                 <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
@@ -401,8 +401,8 @@ export const InstallationGuide: React.FC = () => {
                 {[
                   {
                     step: '1',
-                    title: 'Open Taskora Web',
-                    detail: 'Navigate directly to the Taskora Web app in any modern browser.',
+                    title: 'Open KIVENTA Web',
+                    detail: 'Navigate directly to the KIVENTA Web app in any modern browser.',
                   },
                   {
                     step: '2',
@@ -412,7 +412,7 @@ export const InstallationGuide: React.FC = () => {
                   {
                     step: '3',
                     title: 'Install as PWA (Optional)',
-                    detail: 'Click "Install Taskora" in Chrome, Edge, or Safari to add to your dock or homescreen.',
+                    detail: 'Click "Install KIVENTA" in Chrome, Edge, or Safari to add to your dock or homescreen.',
                   },
                 ].map((item) => (
                   <div

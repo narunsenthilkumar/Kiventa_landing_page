@@ -1,5 +1,5 @@
 /**
- * Taskora Apple HIG Design Tokens & Theme Definitions
+ * KIVENTA Apple HIG Design Tokens & Theme Definitions
  */
 
 export type ThemeMode = 'light' | 'dark' | 'system';

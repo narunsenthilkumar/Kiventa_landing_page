@@ -42,7 +42,7 @@ export const usePlatform = (): PlatformInfo => {
       isExternalDownload: true,
     },
     secondaryAction: {
-      label: 'Get Taskora for Android',
+      label: 'Get KIVENTA for Android',
       url: downloadConfig.android.apk.url,
       targetId: 'android' as const,
       isExternalDownload: true,
@@ -94,7 +94,7 @@ export const usePlatform = (): PlatformInfo => {
     };
 
     let secondaryAction: ActionTarget = {
-      label: 'Get Taskora for Android',
+      label: 'Get KIVENTA for Android',
       url: downloadConfig.android.apk.url,
       targetId: 'android',
       isExternalDownload: true,
@@ -108,14 +108,14 @@ export const usePlatform = (): PlatformInfo => {
         isExternalDownload: true,
       };
       secondaryAction = {
-        label: 'Open Taskora Web',
+        label: 'Open KIVENTA Web',
         url: downloadConfig.web.url,
         targetId: 'web',
         isExternalDownload: false,
       };
     } else if (isMacOS || isIOS || isLinux) {
       primaryAction = {
-        label: 'Open Taskora Web',
+        label: 'Open KIVENTA Web',
         url: downloadConfig.web.url,
         targetId: 'web',
         isExternalDownload: false,

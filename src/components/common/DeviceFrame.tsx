@@ -11,7 +11,7 @@ interface DeviceFrameProps {
 export const DeviceFrame: React.FC<DeviceFrameProps> = ({
   children,
   type = 'macos',
-  title = 'Taskora',
+  title = 'KIVENTA',
   className = '',
   style,
 }) => {
@@ -91,7 +91,7 @@ export const DeviceFrame: React.FC<DeviceFrameProps> = ({
         </div>
 
         <div style={{ fontSize: '0.85rem', fontWeight: 600, color: 'var(--textSecondary)', display: 'flex', alignItems: 'center', gap: '6px' }}>
-          <img src="/assets/branding/taskora-favicon.png" alt="" style={{ width: '14px', height: '14px' }} />
+          <img src="/assets/branding/kiventa_logo.png" alt="" style={{ width: '14px', height: '14px', borderRadius: '3px', objectFit: 'contain' }} />
           <span>{title}</span>
         </div>
 

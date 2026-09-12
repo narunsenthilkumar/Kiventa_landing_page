@@ -13,7 +13,7 @@ export const BackupSection: React.FC = () => {
       format === 'json'
         ? JSON.stringify(
             {
-              app: 'Taskora',
+              app: 'KIVENTA',
               version: '1.0.0',
               exportedAt: new Date().toISOString(),
               tasksCount: 148,
@@ -29,7 +29,7 @@ export const BackupSection: React.FC = () => {
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = format === 'json' ? 'taskora-backup-2026-08-17.json' : 'taskora-tasks-export.csv';
+    a.download = format === 'json' ? 'kiventa-backup-2026-08-17.json' : 'kiventa-tasks-export.csv';
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);

@@ -71,7 +71,7 @@ export const HeroAppPreview: React.FC = () => {
   const strokeDashoffset = circumference - (percentage / 100) * circumference;
 
   return (
-    <DeviceFrame type="macos" title="Taskora — Today Workspace">
+    <DeviceFrame type="macos" title="KIVENTA — Today Workspace">
       <div
         style={{
           display: 'grid',

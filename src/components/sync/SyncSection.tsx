@@ -32,7 +32,7 @@ export const SyncSection: React.FC = () => {
           <span className="section-tag">Zero-Cloud Synchronization</span>
           <h2 className="text-gradient-hero">Your tasks. Everywhere.</h2>
           <p>
-            Keep your Taskora workspace perfectly consistent across Windows, Android, and Web with cryptographic local pairing and deterministic conflict resolution.
+            Keep your KIVENTA workspace perfectly consistent across Windows, Android, and Web with cryptographic local pairing and deterministic conflict resolution.
           </p>
         </div>
 

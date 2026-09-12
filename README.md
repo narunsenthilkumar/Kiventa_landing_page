@@ -1,15 +1,15 @@
-# Taskora — Premium Product Landing Page
+# KIVENTA — Premium Product Landing Page
 
 <p align="center">
-  <img src="public/assets/branding/taskora-logo.png" alt="Taskora Logo" width="120" />
+  <img src="public/assets/branding/kiventa_logo.png" alt="KIVENTA Logo" width="120" />
 </p>
 
 <p align="center">
-  <strong>"Organize your day. Focus on what matters."</strong>
+  <strong>"KIVENTA — Turn Intent Into Action."</strong>
 </p>
 
 <p align="center">
-  <em>An Apple-inspired, cinematic, and production-quality landing page for the Taskora productivity suite.</em>
+  <em>An Apple-inspired, cinematic, and production-quality landing page for the KIVENTA productivity workspace.</em>
 </p>
 
 <p align="center">
@@ -25,7 +25,21 @@
 
 ## 🌟 Overview
 
-This repository contains the marketing website and product landing page for **Taskora** — an offline-first task management and focus application. Crafted with Apple Human Interface principles, spatial glassmorphism, fluid physics-based micro-interactions, dynamic dark/light theme switching, and interactive live simulators.
+This repository contains the marketing website and product landing page for **KIVENTA** — a modern productivity workspace built to help you turn intentions into organized actions, stay focused, and keep your work synchronized across devices.
+
+Crafted with Apple Human Interface principles, spatial glassmorphism, fluid physics-based micro-interactions, dynamic dark/light theme switching, and interactive live simulators.
+
+---
+
+## 🧭 Meaning of the Name
+
+**KIVENTA** is a coined brand name representing the journey from intent to organized action and accomplishment.
+
+### Brand Philosophy
+KIVENTA is designed around a simple principle: productivity tools should eliminate friction between thought and execution.
+
+### Tagline
+**KIVENTA — Turn Intent Into Action.**
 
 ---
 
@@ -63,7 +77,7 @@ This repository contains the marketing website and product landing page for **Ta
 To_do_list_landing_page/
 ├── public/
 │   ├── assets/
-│   │   └── branding/          # High-resolution Taskora logos, icons, splash
+│   │   └── branding/          # High-resolution KIVENTA logos, icons, splash
 │   ├── favicon.ico
 │   └── favicon.png
 ├── src/
@@ -193,4 +207,4 @@ export const DOWNLOAD_TARGETS = {
 
 ## 📄 License
 
-© 2026 Taskora. All rights reserved.
+© 2026 KIVENTA. All rights reserved.

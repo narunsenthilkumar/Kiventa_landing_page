@@ -73,7 +73,7 @@ export const FinalCta: React.FC = () => {
               lineHeight: 1.6,
             }}
           >
-            Join thousands who have organized their work, reclaimed their focus, and protected their privacy with Taskora.
+            Join thousands who have organized their work, reclaimed their focus, and protected their privacy with KIVENTA.
           </p>
 
           {/* Action Buttons */}
@@ -94,7 +94,7 @@ export const FinalCta: React.FC = () => {
               isDownloadAction
               onClick={() => scrollTo('downloads')}
             >
-              Download Taskora
+              Download KIVENTA
             </AnimatedButton>
 
             <a

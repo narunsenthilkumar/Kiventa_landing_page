@@ -34,9 +34,9 @@ export const Footer: React.FC = () => {
           <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
               <img
-                src="/assets/branding/taskora-favicon.png"
-                alt="Taskora"
-                style={{ width: '32px', height: '32px', borderRadius: '8px' }}
+                src="/assets/branding/kiventa_logo.png"
+                alt="KIVENTA"
+                style={{ width: '32px', height: '32px', borderRadius: '8px', objectFit: 'contain' }}
               />
               <span style={{ fontSize: '1.4rem', fontWeight: 800, letterSpacing: '-0.03em' }}>
                 {APP_METADATA.name}
@@ -92,6 +92,9 @@ export const Footer: React.FC = () => {
             <a href="#calendar" onClick={(e) => { e.preventDefault(); scrollTo('calendar'); }} style={{ fontSize: '0.88rem', color: 'var(--textSecondary)', transition: 'color 0.2s' }}>
               Calendar
             </a>
+            <a href="#reviews" onClick={(e) => { e.preventDefault(); scrollTo('reviews'); }} style={{ fontSize: '0.88rem', color: 'var(--textSecondary)', transition: 'color 0.2s' }}>
+              User Reviews
+            </a>
           </div>
 
           {/* Column 2: Architecture */}
@@ -101,6 +104,9 @@ export const Footer: React.FC = () => {
             </h4>
             <a href="#sync" onClick={(e) => { e.preventDefault(); scrollTo('sync'); }} style={{ fontSize: '0.88rem', color: 'var(--textSecondary)', transition: 'color 0.2s' }}>
               Cross-Device Sync
+            </a>
+            <a href="#nearby-sync" onClick={(e) => { e.preventDefault(); scrollTo('nearby-sync'); }} style={{ fontSize: '0.88rem', color: 'var(--textSecondary)', transition: 'color 0.2s' }}>
+              Nearby Sync (Bump)
             </a>
             <a href="#offline" onClick={(e) => { e.preventDefault(); scrollTo('offline'); }} style={{ fontSize: '0.88rem', color: 'var(--textSecondary)', transition: 'color 0.2s' }}>
               Offline-First Engine

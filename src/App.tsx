@@ -13,11 +13,13 @@ import { FocusSection } from './components/focus/FocusSection';
 import { CalendarSection } from './components/calendar/CalendarSection';
 import { StatisticsSection } from './components/statistics/StatisticsSection';
 import { SyncSection } from './components/sync/SyncSection';
+import { NearbySyncSection } from './components/sync/NearbySyncSection';
 import { OfflineSection } from './components/offline/OfflineSection';
 import { BackupSection } from './components/backup/BackupSection';
 import { DownloadSection } from './components/download/DownloadSection';
 import { InstallationGuide } from './components/installation/InstallationGuide';
 import { SecuritySection } from './components/security/SecuritySection';
+import { ReviewsSection } from './components/reviews/ReviewsSection';
 import { FinalCta } from './components/cta/FinalCta';
 import { Footer } from './components/footer/Footer';
 
@@ -37,11 +39,13 @@ const MainLayout: React.FC = () => {
     'calendar',
     'statistics',
     'sync',
+    'nearby-sync',
     'offline',
     'backup',
     'downloads',
     'installation',
     'privacy',
+    'reviews',
   ];
 
   const activeSection = useScrollSpy(sectionIds);
@@ -61,11 +65,13 @@ const MainLayout: React.FC = () => {
         <CalendarSection />
         <StatisticsSection />
         <SyncSection />
+        <NearbySyncSection />
         <OfflineSection />
         <BackupSection />
         <DownloadSection />
         <InstallationGuide />
         <SecuritySection />
+        <ReviewsSection />
         <FinalCta />
       </main>
 

@@ -56,7 +56,7 @@ export const HeroSection: React.FC = () => {
         {/* Entrance Stage 1: Brand pill badge */}
         <div style={{ marginBottom: '20px', animation: 'heroRise 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards' }}>
           <PillBadge
-            label="Taskora 1.0 — 100% Offline-First Productivity"
+            label="KIVENTA — Turn Intent Into Action"
             variant="accent"
             icon={<Sparkles size={14} />}
             dot
@@ -92,7 +92,7 @@ export const HeroSection: React.FC = () => {
             animation: 'heroRise 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.16s backwards',
           }}
         >
-          Taskora brings tasks, projects, focus sessions, smart planning, reminders, and productivity insights into one beautifully designed workspace.
+          KIVENTA is a modern productivity workspace built to help you turn intentions into organized actions, stay focused, and keep your work synchronized across devices.
         </p>
 
         {/* Entrance Stage 4: Action Buttons */}
@@ -194,7 +194,7 @@ export const HeroSection: React.FC = () => {
             }}
             className="hero-web-link"
           >
-            <span>Or use Taskora Web</span>
+            <span>Or use KIVENTA Web</span>
             <ArrowRight size={14} style={{ color: '#5E5CE6' }} />
           </a>
         </div>

@@ -13,7 +13,7 @@ const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [mode, setModeState] = useState<ThemeMode>(() => {
-    const saved = localStorage.getItem('taskora_theme_preference') as ThemeMode | null;
+    const saved = (localStorage.getItem('kiventa_theme_preference') || localStorage.getItem('taskora_theme_preference')) as ThemeMode | null;
     return saved || 'system';
   });
 
@@ -40,7 +40,7 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
 
   const setMode = (newMode: ThemeMode) => {
     setModeState(newMode);
-    localStorage.setItem('taskora_theme_preference', newMode);
+    localStorage.setItem('kiventa_theme_preference', newMode);
   };
 
   const toggleTheme = () => {

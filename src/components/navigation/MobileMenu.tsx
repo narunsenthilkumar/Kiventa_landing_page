@@ -1,5 +1,5 @@
 import React from 'react';
-import { X, Download, Sun, Moon, Laptop, Sparkles, CheckCircle2, Clock, Calendar, RefreshCw, Shield } from 'lucide-react';
+import { X, Download, Sun, Moon, Laptop, Sparkles, CheckCircle2, Clock, Calendar, RefreshCw, Shield, Share2, MessageSquare } from 'lucide-react';
 import { useTheme } from '../../theme/ThemeContext';
 import { AnimatedButton } from '../common/AnimatedButton';
 
@@ -20,7 +20,9 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose, activeS
     { id: 'focus', label: 'Focus Mode', icon: <Clock size={18} /> },
     { id: 'calendar', label: 'Calendar', icon: <Calendar size={18} /> },
     { id: 'sync', label: 'Cross-Device Sync', icon: <RefreshCw size={18} /> },
+    { id: 'nearby-sync', label: 'Nearby Sync (Bump)', icon: <Share2 size={18} /> },
     { id: 'privacy', label: 'Security & Privacy', icon: <Shield size={18} /> },
+    { id: 'reviews', label: 'User Reviews', icon: <MessageSquare size={18} /> },
     { id: 'downloads', label: 'Downloads', icon: <Download size={18} /> },
   ];
 
@@ -69,8 +71,8 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose, activeS
         {/* Header */}
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-            <img src="/assets/branding/taskora-favicon.png" alt="Taskora" style={{ width: '28px', height: '28px' }} />
-            <span style={{ fontSize: '1.25rem', fontWeight: 700, letterSpacing: '-0.02em' }}>Taskora</span>
+            <img src="/assets/branding/kiventa_logo.png" alt="KIVENTA logo" style={{ width: '28px', height: '28px', borderRadius: '7px', objectFit: 'contain' }} />
+            <span style={{ fontSize: '1.25rem', fontWeight: 700, letterSpacing: '-0.02em' }}>KIVENTA</span>
           </div>
           <button
             onClick={onClose}
@@ -206,7 +208,7 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose, activeS
           onClick={() => handleLinkClick('downloads')}
           style={{ width: '100%' }}
         >
-          Download Taskora
+          Download KIVENTA
         </AnimatedButton>
       </div>
     </div>
